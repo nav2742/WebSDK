@@ -14,12 +14,8 @@
         return null;  // Return null if cookie not found
     }
     
-    var storedData = getCookie("naveen");
-    var loginData
-    if (storedData) {
-        loginData = JSON.parse(storedData);  // Deserialize the cookie value back to an object
-        console.log(loginData);
-    }
+    var storedData = getCookie("token");
+    
     function koreGenerateUUID() {
         var d = new Date().getTime();
         if (window.performance && typeof window.performance.now === "function") {
@@ -52,11 +48,12 @@
             queryParams: {}
         }
     }
+    let old_id = localStorage.getItem("kr-cw-id")
 
     botOptions.JWTUrl = "http://demo.kore.net:3000/users/sts";
-    botOptions.userIdentity = koreGenerateUUID();// Provide users email id here
+    botOptions.userIdentity = old_id?old_id: koreGenerateUUID();// Provide users email id here
     botOptions.botInfo = { name: "ABC Banking Ltd", "_id": "st-987088dc-bd70-59ea-b05e-82677a3131e9",customData:{
-        token:loginData
+        token:storedData?JSON.parse(storedData):""
     } }; // bot name is case sensitive
 
     /* 

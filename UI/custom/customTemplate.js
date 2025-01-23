@@ -48,13 +48,36 @@
 				  
 			
 				  console.log(loginData);
-				  var loginDataString = JSON.stringify(loginData); 
-				  var expires = new Date();
-				  expires.setTime(expires.getTime() + (5 * 1000));  // 15 seconds expiration
-				  document.cookie = "naveen=" + encodeURIComponent(loginDataString) + "; expires=" + expires.toUTCString() + "; path=/";
-				//   document.cookie = "naveen=" + encodeURIComponent(loginDataString) + "; path=/";
-				  window.location.href = window.location.href.split('?')[0] + "?fs=true";
-				  // Proceed with your login API call or form submission here
+				  fetch("https://175371-gtmretailbank-stage.adobeio-static.net/api/v1/web/GtmRetailBank/stub/authUser", {
+					method: 'POST',
+					headers: {
+					  'Content-Type': 'application/json',
+					  'X-Client-Key': 'retailbank'
+					},
+					body: JSON.stringify({
+					  "userid": loginData.username,
+					  "password": loginData.password
+					}),
+				  })
+					.then(response => {
+					  if (!response.ok) { // Check if response status is not OK
+						throw new Error('Invalid credentials or network issue');
+					  }
+					  return response.json(); // Parse JSON if the response is okay
+					})
+					.then(data => {
+					  data["userId"]= loginData.username
+					  var expires = new Date();
+					  expires.setTime(expires.getTime() + (15 * 1000));  // 15 seconds expiration
+					  document.cookie = "token=" + encodeURIComponent(JSON.stringify(data)) + "; expires=" + expires.toUTCString() + "; path=/"; // Assuming response has a `token` field
+					  window.location.href = window.location.href.split('?')[0] + "?fs=true"; // Redirect to the same page with query param
+					})
+					.catch(error => {
+					  console.error(error); // Log error details for debugging
+					  alert('Invalid credentials or network issue');
+					});
+				  
+				  
 
 				});
 			  });

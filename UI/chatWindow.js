@@ -790,6 +790,7 @@
                 speechPrefixURL = cfg.botOptions.koreSpeechAPIUrl;
                 ttsServerUrl = cfg.botOptions.ttsSocketUrl;
                 userIdentity = cfg.botOptions.userIdentity;
+                localStorage.setItem("kr-cw-id",userIdentity)
                 if (cfg.botOptions.recorderWorkerPath && cfg.botOptions.recorderWorkerPath.trim().length > 0) {
                     recorderWorkerPath = cfg.botOptions.recorderWorkerPath.trim();
                 }
