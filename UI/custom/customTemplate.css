@@ -7797,6 +7797,7 @@
 }
 .dateContainer .continueDate{
     height: 36px;
+	width:120.5%;
     border: 1px solid #979797;
     cursor: pointer;
     border-bottom-right-radius: 12px;

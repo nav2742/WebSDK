@@ -33,6 +33,15 @@
 				'helpers': this.helpers,
 				'extension': this.extension
 			});
+			document.querySelector(".kore-chat-footer").style.pointerEvents = "none";
+			document.querySelector(".kore-chat-footer").style.color = "#ddd";
+			// document.querySelector(".footerContainer").style.color = "#ddd";
+			// document.querySelector(".attachment").style.color = "#ddd";
+			// document.querySelector(".ttspeakerDiv").style.pointerEvents = "#ddd";
+			// document.querySelector(".microphoneBtn").style.pointerEvents =  "#ddd";
+			// document.querySelector(".chatSendMsg").style.pointerEvents =  "#ddd";
+
+			
 			$(document).ready(function(){
 				var loginData = {
 				  username: '',
@@ -47,7 +56,7 @@
 				  loginData.rememberMe = $("#remember-me").is(":checked");
 				  
 			
-				  console.log(loginData);
+				//   console.log(loginData);
 				  fetch("https://175371-gtmretailbank-stage.adobeio-static.net/api/v1/web/GtmRetailBank/stub/authUser", {
 					method: 'POST',
 					headers: {

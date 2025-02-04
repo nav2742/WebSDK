@@ -5,9 +5,11 @@
             var jsonData = {
                 "clientId": options.clientId,
                 "clientSecret": options.clientSecret,
-                "identity": options.userIdentity,
-                "aud": "",
-                "isAnonymous": false
+                // "identity": window.KoreSDK.token_details?"Naveen.kothakota@tcs.com":options.userIdentity,
+                "identity":options.userIdentity,
+                "aud": "https://idproxy.kore.com/authorize",
+                "isAnonymous": false,
+                "identityToMerge": window.KoreSDK.token_details?"Naveen.kothakota@tcs.com":""
             };
             $.ajax({
                 url: options.JWTUrl,

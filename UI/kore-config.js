@@ -15,6 +15,7 @@
     }
     
     var storedData = getCookie("token");
+    window.KoreSDK.token_details = storedData
     
     function koreGenerateUUID() {
         var d = new Date().getTime();
@@ -50,7 +51,8 @@
     }
     let old_id = localStorage.getItem("kr-cw-id")
 
-    botOptions.JWTUrl = "http://demo.kore.net:3000/users/sts";
+    // botOptions.JWTUrl = "http://demo.kore.net:3000/users/sts";
+    botOptions.JWTUrl= "https://sdkapp.onrender.com/api/users/sts"
     botOptions.userIdentity = old_id?old_id: koreGenerateUUID();// Provide users email id here
     botOptions.botInfo = { name: "ABC Banking Ltd", "_id": "st-987088dc-bd70-59ea-b05e-82677a3131e9",customData:{
         token:storedData?JSON.parse(storedData):""
@@ -103,7 +105,7 @@
            }
         },
         allowLocation: true,			// set false, to deny sending location to server
-        loadHistory: false,				// set true to load recent chat history
+        loadHistory:false,				// set true to load recent chat history
         messageHistoryLimit: 10,		// set limit to load recent chat history
         autoEnableSpeechAndTTS: false, 	// set true, to use talkType voice keyboard.
         graphLib: "d3" ,				// set google, to render google charts.This feature requires loader.js file which is available in google charts documentation.
