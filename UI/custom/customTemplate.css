@@ -7797,7 +7797,7 @@
 }
 .dateContainer .continueDate{
     height: 36px;
-	width:120.5%;
+	width:84%;
     border: 1px solid #979797;
     cursor: pointer;
     border-bottom-right-radius: 12px;
@@ -7849,6 +7849,9 @@
     border: 1px solid #979797;
     border-radius: 12px 12px 0px 0px;
     border-bottom: none;
+	display: block;
+	width: 83%;
+
 }
 .ui-datepicker .ui-datepicker-title{
     color: rgb(64, 64, 64);
