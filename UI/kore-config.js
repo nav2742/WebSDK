@@ -54,7 +54,7 @@
     // botOptions.JWTUrl = "http://demo.kore.net:3000/users/sts";
     botOptions.JWTUrl= "https://sdkapp.onrender.com/api/users/sts"
     botOptions.userIdentity = old_id?old_id: koreGenerateUUID();// Provide users email id here
-    botOptions.botInfo = { name: "ABC Banking Ltd", "_id": "st-987088dc-bd70-59ea-b05e-82677a3131e9",customData:{
+    botOptions.botInfo = { name: "ABC BANK", "_id": "st-987088dc-bd70-59ea-b05e-82677a3131e9",customData:{
         token:storedData?JSON.parse(storedData):""
     } }; // bot name is case sensitive
 

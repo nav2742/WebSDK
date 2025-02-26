@@ -496,7 +496,7 @@
                             str = str.replace(hrefRef, customStrReplacer);
                         });
                     }
-                    str = chatInitialize.koreReplaceAll(str,'target="underscoreblank"', 'target="_blank"');
+                    str = chatInitialize.koreReplaceAll(str, 'target="underscoreblank"', 'target="_blank"');
                     // str = str.koreReplaceAll("target='underscoreblank'", 'target="_blank"');
                     // if (responseType === 'user') {
                         // str = str.replace(/abc-error=/gi, 'onerror=');
@@ -3230,7 +3230,14 @@
                     <div class="minimized-title"></div> \
                     <div class="minimized"><span class="messages"></span></div> \
                     <div class="kore-chat-header"> \
-                        <div id="botHeaderTitle" aria-labelledby="botHeaderTitle" class="header-title" title="${chatTitle}">${chatTitle}</div> \
+                        <div class="brand-logo"> \
+                            <svg xmlns="http://www.w3.org/2000/svg" width="31.785" height="32.244" viewBox="0 0 31.785 32.244">\
+                                <path id="Path_2875" data-name="Path 2875" d="M15.892,0C-5.3.359-5.3,31.882,15.892,32.244,37.08,31.885,37.085.362,15.892,0ZM19.93,17.516a8.3,8.3,0,0,0,1.437-.131q.748-.13.862-.131.921,0,2.024,2,.138.24.966,1.5a2.472,2.472,0,0,1,.461,1.087q0,.566-.666.565h-2.99a2.3,2.3,0,0,1-1.816-.957q-.184-.24-1.612-2.478-.369-.587-.759-.587a.885.885,0,0,0-.461.239q-.712.567-.758.587a8.178,8.178,0,0,0,1.31,2.3,4.079,4.079,0,0,1,.966,2.2v.065a7.045,7.045,0,0,0-1.862,1.892q-.6.87-.828.87-.621,0-2.254-2.087a3.058,3.058,0,0,1-.782-1.413,6.2,6.2,0,0,1,.506-1.065q.712-1.327,1.241-2.522a1.038,1.038,0,0,0-.471-.653,1.3,1.3,0,0,0-.724-.283,1.135,1.135,0,0,0-.9.609,14.167,14.167,0,0,0-.805,1.479,3.876,3.876,0,0,1-.851,1.217,1.718,1.718,0,0,1-.9.37q-.667.044-1.31.108a20.1,20.1,0,0,1-2.116.131q-.6,0-.6-.391a6.557,6.557,0,0,1,1.173-3.479q.988-1.545,2.047-1.544a4.946,4.946,0,0,1,.735.12,4.952,4.952,0,0,0,.989.119q1.587,0,1.587-.761a1.409,1.409,0,0,0-.461-1.022,1.349,1.349,0,0,0-.943-.457,7.136,7.136,0,0,0-.805.25,4.9,4.9,0,0,1-1.585.252,1.267,1.267,0,0,1-.943-.326,4.822,4.822,0,0,1-.691-.978A8.384,8.384,0,0,1,5.992,11.32q0-.478.437-.511l1.334-.1a10.842,10.842,0,0,0,1.311-.217,5.39,5.39,0,0,1,.921-.154,1.525,1.525,0,0,1,1.287.8q.16.24,1.081,2.174a2.808,2.808,0,0,0,.62.826c.215.217.36.326.438.326q.23,0,.691-.478,1.057-1.108,1.058-1.435,0-.412-1.127-1.478T12.917,9.405a2.2,2.2,0,0,1,.574-1.5q1.978-2.219,2.277-2.219.276,0,1.035.935A14.2,14.2,0,0,1,18.5,9.08a23.008,23.008,0,0,1-2.276,4.044q1.172,1,1.587,1a.785.785,0,0,0,.6-.326,7.466,7.466,0,0,0,.575-.979q.967-1.826,1.173-2.109a1.406,1.406,0,0,1,1.126-.739q.161,0,1.426.174,1.082.11,2.277.239a1.594,1.594,0,0,1,.632.185.6.6,0,0,1,.173.511,5.32,5.32,0,0,1-.851,2.174q-.461.87-.9,1.739a1.418,1.418,0,0,1-1.242.7,5.912,5.912,0,0,1-1.426-.272,5.922,5.922,0,0,0-1.449-.272q-1.31,0-1.31,1.413Q18.619,17.517,19.93,17.516Z" fill="#fff"/>\
+                            </svg>\
+                        </div> \
+                        <div id="botHeaderTitle" aria-labelledby="botHeaderTitle" class="header-title" title="${chatTitle}">\
+                        ${chatTitle}\
+                        </div>\
                         <div class="chat-box-controls"> \
                             {{if botMessages.availableLanguages}}\
                                 <select class="lang-selector" >\
@@ -3292,7 +3299,7 @@
                                 <li data-time="${msgData.createdOnTimemillis}" id="${msgData.messageId || msgItem.clientMessageId}" data-kr-msg-id="${msgData.messageId || msgItem.clientMessageId}"\
                                      class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}}\ {{if msgData.icon}}with-icon{{/if}} {{if msgData.fromAgent}}from-agent{{/if}}"> \
                                     {{if msgData.createdOn}}<div aria-hidden="true" aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                                    {{if msgData.icon}}<div aria-hidden="true"  aria-live="off" class="profile-photo"> <div class="user-account avtar" style="background-image:url(${msgData.icon})" title="User Avatar"></div> </div> {{/if}} \
+                                    {{if msgData.icon}}<div aria-hidden="true"  aria-live="off" class="profile-photo"> <div class="user-account avtar" title="User Avatar"></div> </div> {{/if}} \
                                     <div class="messageBubble" aria-live="assertive">\
                                         <div> \
                                             {{if msgData.type === "bot_response"}} \
@@ -3367,7 +3374,7 @@
                             <li data-time="${msgData.createdOnTimemillis}" id="${msgData.messageId || msgItem.clientMessageId}" data-kr-msg-id="${msgData.messageId || msgItem.clientMessageId}"\
                                 class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} {{if msgData.icon}}with-icon{{/if}}"> \
                                 {{if msgData.createdOn}}<div class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                                {{if msgData.icon}}<div class="profile-photo"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                                {{if msgData.icon}}<div class="profile-photo"> <div class="user-account avtar"></div> </div> {{/if}} \
                                 <div class="messageBubble">\
                                     {{if msgItem.component.payload.url}} \
                                         <div class="msgCmpt botResponseAttachments"  download="${msgItem.component.payload.download}" fileid="${msgItem.component.payload.url}"> \
@@ -3409,7 +3416,7 @@
                         class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} {{if msgData.icon}}with-icon{{/if}}"> \
                         <div class="buttonTmplContent"> \
                             {{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                            {{if msgData.icon}}<div aria-live="off" class="profile-photo"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                            {{if msgData.icon}}<div aria-live="off" class="profile-photo"> <div class="user-account avtar"></div> </div> {{/if}} \
                             <ul class="buttonTmplContentBox">\
                                 <li class="buttonTmplContentHeading"> \
                                     {{if msgData.type === "bot_response"}} {{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}} {{else}} {{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "user")}} {{/if}} \
@@ -3435,7 +3442,7 @@
                     <li data-time="${msgData.createdOnTimemillis}" id="${msgData.messageId}" data-kr-msg-id="${msgData.messageId}"\
                         class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon piechart"> \
                         {{if msgData.createdOn}}<div class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                        {{if msgData.icon}}<div class="profile-photo extraBottom"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                        {{if msgData.icon}}<div class="profile-photo extraBottom"> <div class="user-account avtar"></div> </div> {{/if}} \
                         {{if msgData.message[0].component.payload.text}}<div class="messageBubble pieChart">\
                             <span>{{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}}</span>\
                         </div>{{/if}}\
@@ -3453,7 +3460,7 @@
                     <li data-time="${msgData.createdOnTimemillis}" id="${msgData.messageId}" data-kr-msg-id="${msgData.messageId}"\
                         class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon barchart"> \
                         {{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar"></div> </div> {{/if}} \
                         {{if msgData.message[0].component.payload.text}}<div class="messageBubble barchart">\
                             <span>{{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}}</span>\
                         </div>{{/if}}\
@@ -3468,7 +3475,7 @@
                     <li data-time="${msgData.createdOnTimemillis}" id="${msgData.messageId}" data-kr-msg-id="${msgData.messageId}"\
                         class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon linechart"> \
                         {{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar"></div> </div> {{/if}} \
                         {{if msgData.message[0].component.payload.text}}<div class="messageBubble linechart">\
                             <span>{{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}}</span>\
                         </div>{{/if}}\
@@ -3483,7 +3490,7 @@
                     <li data-time="${msgData.createdOnTimemillis}" id="${msgData.messageId}" data-kr-msg-id="${msgData.messageId}"\
                         class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon tablechart"> \
                         {{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar"></div> </div> {{/if}} \
                         {{if msgData.message[0].component.payload.text}}<div class="messageBubble tableChart">\
                             <span>{{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}}</span>\
                         </div>{{/if}}\
@@ -3515,7 +3522,7 @@
                 <li data-time="${msgData.createdOnTimemillis}" id="${msgData.messageId}" data-kr-msg-id="${msgData.messageId}"\
                     class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon tablechart"> \
                     {{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                    {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                    {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar"></div> </div> {{/if}} \
                     {{if msgData.message[0].component.payload.text}}<div class="messageBubble tableChart">\
                         <span>{{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}}</span>\
                     </div>{{/if}}\
@@ -3551,7 +3558,7 @@
                     <li data-time="${msgData.createdOnTimemillis}" id="${msgData.messageId}" data-kr-msg-id="${msgData.messageId}"\
                         class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon tablechart"> \
                         {{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar"></div> </div> {{/if}} \
                         {{if msgData.message[0].component.payload.text}}<div class="messageBubble tableChart">\
                             <span>{{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}}</span>\
                         </div>{{/if}}\
@@ -3609,7 +3616,7 @@
                     <li data-time="${msgData.createdOnTimemillis}" id="${msgData.messageId}" data-kr-msg-id="${msgData.messageId}"\
                         class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon"> \
                         {{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                        {{if msgData.icon}}<div aria-live="off" class="profile-photo extraBottom"> <div class="user-account avtar"></div> </div> {{/if}} \
                         {{if msgData.message[0].component.payload.text}}<div class="messageBubble tableChart">\
                             <span>{{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}}</span>\
                         </div>{{/if}}\
@@ -3646,7 +3653,7 @@
                         class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon quickReplies"> \
                         <div class="buttonTmplContent"> \
                             {{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                            {{if msgData.icon}}<div aria-live="off" class="profile-photo"> <div class="user-account avtar marginT50" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                            {{if msgData.icon}}<div aria-live="off" class="profile-photo"> <div class="user-account avtar marginT50"></div> </div> {{/if}} \
                             {{if msgData.message[0].component.payload.text}} \
                                 <div class="buttonTmplContentHeading quickReply"> \
                                     {{if msgData.type === "bot_response"}} {{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}} {{else}} {{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "user")}} {{/if}} \
@@ -3676,7 +3683,7 @@
                         class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon"> \
                         <div class="listTmplContent"> \
                             {{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
-                            {{if msgData.icon}}<div aria-live="off" class="profile-photo"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+                            {{if msgData.icon}}<div aria-live="off" class="profile-photo"> <div class="user-account avtar"></div> </div> {{/if}} \
                             <ul class="listTmplContentBox"> \
                                 {{if msgData.message[0].component.payload.text || msgData.message[0].component.payload.heading}} \
                                     <li class="listTmplContentHeading"> \
