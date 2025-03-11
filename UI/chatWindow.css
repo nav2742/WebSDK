@@ -689,7 +689,7 @@
 .kore-chat-window.minimize .minimized {
     display: block;
     /* background: #5B9BD5; */
-    background: #665EB0;
+    background: #0a00b3;
     box-shadow: 0px 8px 30px #0000001A;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -727,7 +727,8 @@
     border-bottom: 1px solid var(--sdk-chat-window-header-border-clr);
     color: var(--sdk-chat-window-header-font-clr);
     font-size: 14px;
-    background-color: var(--sdk-chat-window-header-bg);
+    /* background-color: var(--sdk-chat-window-header-bg); */
+    background-color: 0a00b3;
     height: 50px;
     line-height: 49px;
     padding: 0 0 0 20px;
@@ -921,7 +922,8 @@
     max-width: 95%;
     line-height: 1.5;
     font-size: 14px;
-    background-color: var(--sdk-chat-window-user-bubble-bg);
+    /* background-color: var(--sdk-chat-window-user-bubble-bg); */
+    background-color: 0a00b3;
     color: var(--sdk-chat-window-user-bubble-font-clr);
     border-radius: var(--sdk-chat-window-user-bubble-shape);
     border: 1px solid var(--sdk-chat-window-user-bubble-border-clr);
@@ -1000,8 +1002,8 @@
     width: 100%;
     min-height: 38px;
     border-top: 1px solid var(--sdk-chat-window-footer-border-clr);
-    /* background: var(--sdk-chat-window-footer-bg); */
-    /* color: var(--sdk-chat-window-footer-font-clr); */
+    background: var(--sdk-chat-window-footer-bg);
+    color: var(--sdk-chat-window-footer-font-clr);
     padding: 5px 20px;
 }
 
@@ -3063,4 +3065,28 @@
 }
 #kr_chatContainer{
     display: none;/*remove this minimizeMode false*/
+}
+
+.cemex_Im img{
+	width:100%;
+	height:100%;
+	top:0%;
+	bottom:0%
+}
+
+
+.cemex_Im-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cemex_Im {
+    position: absolute; /* Ensures the image is positioned relative to the parent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without stretching */
+    z-index: -1; /* Places the image behind other elements like buttons */
 }

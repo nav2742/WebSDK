@@ -7805,7 +7805,7 @@
     border-bottom-left-radius: 12px;
 }
 .continueDate:hover{
-    border: 0px solid #665EB0 !important;
+    border: 0px solid #F79540;
 }
 .continueDate:active{
     border: 1px solid #F79540;
@@ -7901,11 +7901,3 @@
 /*css for Datepicker ending*/
 
 
-.brand-logo{
-	display: none;
-}
-
-#chatBodyModal .closeChatBodyModal {
-    display: none; /* Hides the close button */
-    pointer-events: none; /* Disables interactions with the button */
-}
